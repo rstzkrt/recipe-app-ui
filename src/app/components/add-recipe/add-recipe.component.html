@@ -1,0 +1,33 @@
+<h1>Recipe</h1>
+<form [formGroup]="addRecipeGroup" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="recipe">
+
+      <mat-form-field color="accent" appearance="outline">
+        <mat-label>Description</mat-label>
+        <input type="text"  matInput formControlName="preparationDescription"/>
+
+      </mat-form-field>
+      <br>
+      <mat-form-field color="accent" appearance="outline">
+        <mat-label>RecipeName</mat-label>
+        <input type="text" name="recipeName" matInput formControlName="recipeName" placeholder="">
+      </mat-form-field>
+      <br>
+      <mat-form-field color="accent"  appearance="outline" >
+        <mat-label>Photo URL</mat-label>
+        <input type="url" matInput formControlName="photoUrl">
+      </mat-form-field>
+      <br>
+      <mat-form-field color="accent" appearance="outline">
+        <mat-label>Ingredients</mat-label>
+        <input type="text" matInput formControlName="ingredients">
+      </mat-form-field>
+
+      <br>
+      <mat-error *ngIf="!addRecipeGroup.get('preparationDescription')">* All the inputs are required and min 3 char</mat-error>
+<!--      <button [disabled]="!addRecipeGroup.valid" type="submit" mat-raised-button color="accent">Submit</button>-->
+      <button  type="submit" mat-raised-button color="accent">Submit</button>
+      <button   (click)="onClick()" mat-raised-button color="warn">Cancel</button>
+    </div>
+  </form>

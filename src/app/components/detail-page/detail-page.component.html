@@ -1,0 +1,47 @@
+<mat-card style="width: 100%; max-width: 100% ;margin-top: 10px; margin-left: 25%;margin-right: 2%;" >
+  <mat-card-header>
+    <img mat-card-avatar
+         src="{{recipe.user.avatar}}"
+         style="background-size: cover">
+    <mat-card-title>{{recipe.recipeName}}</mat-card-title>
+          <mat-card-subtitle>{{recipe.recipeName}}</mat-card-subtitle>
+  </mat-card-header>
+  <img style="max-width:900px" mat-card-image
+       src="{{recipe.photoUrl}}">
+  <mat-card-content>
+
+    <div  *ngIf="afAuth.authState | async as user">
+      <button (click)="onUpdate()" *ngIf="user.uid===recipe.user.uid" mat-button color="primary">Update</button>
+
+      <button (click)="onDelete()" *ngIf="user.uid===recipe.user.uid" style="margin-left: 600px" mat-button color="warn">Delete</button>
+    </div>
+    <br>
+
+
+    <p  style="  white-space: nowrap;overflow: hidden; text-overflow: ellipsis;max-width: 500px;">
+      {{recipe.preparationDescription}}/
+    </p>
+
+    <p  style="  white-space: nowrap;overflow: hidden; text-overflow: ellipsis;max-width: 500px;">
+      {{recipe.ingredients}}
+    </p>
+
+
+
+  </mat-card-content>
+  <mat-card-actions>
+
+    <form style="min-width: 150px; max-width: 500px;width: 100%;">
+
+      <mat-form-field class="example-full-width" style="width: 100%;">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput ></textarea>
+      </mat-form-field>
+
+    </form>
+
+    <!--    comments/review section -->
+
+
+  </mat-card-actions>
+</mat-card>

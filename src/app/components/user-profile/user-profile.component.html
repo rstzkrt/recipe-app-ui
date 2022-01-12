@@ -1,0 +1,30 @@
+<mat-card *ngIf="afAuth.authState | async as user" style="">
+    <img style="margin-left:45%; " src="{{user.photoURL}}">
+    <h1 style="text-align: center">{{user.displayName}}</h1>
+  <div style="margin-left:45%;">
+    <button mat-raised-button>Update Profile</button>
+  </div>
+</mat-card>
+
+
+<mat-tab-group>
+
+  <mat-tab label="About">
+    <div>
+
+      <mat-toolbar style="width: 1300px">
+        <div>General Information</div>
+      </mat-toolbar>
+    </div>
+  </mat-tab>
+
+
+  <mat-tab label="Liked Recipes">
+
+    <mat-toolbar style="width: 1300px">
+      <div>Liked Recipes</div>
+    </mat-toolbar>
+  </mat-tab>
+
+</mat-tab-group>
+

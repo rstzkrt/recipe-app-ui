@@ -1,0 +1,30 @@
+<h1>Update-Recipe</h1>
+<form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+  <div formGroupName="recipe">
+    <mat-form-field color="accent" appearance="outline">
+      <mat-label>Description</mat-label>
+      <input type="text" matInput formControlName="preparationDescription" placeholder="">
+    </mat-form-field>
+    <br>
+    <mat-form-field color="accent" appearance="outline">
+      <mat-label>RecipeName</mat-label>
+      <input type="text" matInput formControlName="recipeName" placeholder="">
+    </mat-form-field>
+    <br>
+    <mat-form-field color="accent"  appearance="outline" >
+      <mat-label>Photo URL</mat-label>
+      <input type="url" matInput formControlName="photoUrl">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field color="accent" appearance="outline">
+      <mat-label>Ingredients</mat-label>
+      <input type="text" matInput formControlName="ingredients">
+    </mat-form-field>
+    <br>
+
+    <button  type="submit" mat-raised-button color="accent">Submit</button>
+
+    <button (click)="onClick()" mat-raised-button color="warn">Cancel</button>
+  </div>
+</form>

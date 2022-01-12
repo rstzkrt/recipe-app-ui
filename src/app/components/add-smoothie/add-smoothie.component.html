@@ -1,0 +1,29 @@
+<h1>Smoothie</h1>
+<form>
+  <div formGroupName="recipe">
+    <mat-form-field color="accent" appearance="outline">
+      <mat-label>Description</mat-label>
+      <input type="text" matInput formControlName="description" placeholder="">
+    </mat-form-field>
+    <br>
+    <mat-form-field color="accent" appearance="outline">
+      <mat-label>RecipeName</mat-label>
+      <input type="text" matInput formControlName="name" placeholder="Etc:">
+    </mat-form-field>
+    <br>
+    <mat-form-field color="accent"  appearance="outline" >
+      <mat-label>Photo URL</mat-label>
+      <input type="url" matInput formControlName="photo">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field color="accent" appearance="outline">
+      <mat-label>Ingredients</mat-label>
+      <input type="text" matInput formControlName="ingredients">
+    </mat-form-field>
+    <br>
+
+    <button type="submit" style="" mat-raised-button color="accent">Submit</button>
+    <button  mat-raised-button color="warn">Cancel</button>
+  </div>
+</form>
